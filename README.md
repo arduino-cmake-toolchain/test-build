@@ -1,3 +1,4 @@
+[Dev version]
 # Build with Arduino CMake Toolchain action
 
 This action builds an Arduino Project using Arduino CMake Toolchain
