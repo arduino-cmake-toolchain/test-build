@@ -50,7 +50,7 @@ None
 
     uses: actions/arduino-cmake-toolchain/build@v1
     with:
-      CMAKE_GENERATOR: -G Unix Makefiles
+      CMAKE_GENERATOR: Unix Makefiles
       ARDUINO_TOOLCHAIN_DIR: $GITHUB_WORKSPACE/Arduino-CMake-Toolchain
       ARDUINO_PROJECT_DIR: $GITHUB_WORKSPACE
       ARDUINO_BUILD_DIR: $GITHUB_WORKSPACE/build
