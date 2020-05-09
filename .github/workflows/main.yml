@@ -11,6 +11,7 @@ jobs:
         repository: a9183756-gh/Arduino-CMake-Toolchain
         path: Arduino-CMake-Toolchain
         ref : release-1.1-dev
+    - run: mkdir $GITHUB_WORKSPACE/build
     - name: Build the example project of the toolchain
       uses: arduino-cmake-toolchain/test-build@v0.2
       with:
