@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Build a project using Arduino CMake Toolchain
     steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v2
     - name: Checkout the Arduino CMake Toolchain repository
       uses: actions/checkout@v2
       with:
@@ -13,7 +15,8 @@ jobs:
         ref : release-1.1-dev
     - run: mkdir  ${{ github.workspace }}/build
     - name: Build the example project of the toolchain
-      uses: arduino-cmake-toolchain/test-build@v0.2
+      # uses: arduino-cmake-toolchain/test-build@v0.2
+      uses: ./
       with:
         CMAKE_GENERATOR: 'Unix Makefiles'
         ARDUINO_TOOLCHAIN_DIR:  ${{ github.workspace }}/Arduino-CMake-Toolchain
