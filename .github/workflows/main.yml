@@ -12,7 +12,7 @@ jobs:
         path: Arduino-CMake-Toolchain
         ref : release-1.1-dev
     - name: Build the example project of the toolchain
-      uses: arduino-cmake-toolchain/test-build
+      uses: ./
       with:
         CMAKE_GENERATOR: Unix Makefiles
         ARDUINO_TOOLCHAIN_DIR: $GITHUB_WORKSPACE/Arduino-CMake-Toolchain
