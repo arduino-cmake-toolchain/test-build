@@ -1,0 +1,43 @@
+name: arduino-platform-test
+
+description: 'An action testing an Arduino platform using Arduino CMake Toolchain'
+
+author: 'Arduino CMake Toolchain'
+
+branding:
+  icon: stop-circle
+  color: black
+
+inputs:
+  CMAKE_GENERATOR:
+    description: 'CMake generator to be passed to the -G CMake option'
+    required: false
+  ARDUINO_TOOLCHAIN_DIR:
+    description: 'Downloaded toolchain directory'
+    required: true
+  ARDUINO_PROJECT_DIR:
+    description: 'Project source root directory'
+    required: true
+  ARDUINO_BUILD_DIR:
+    description: 'Build root directory'
+    required: true
+  ARDUINO_BOARD:
+    description: 'The only arduino board in the platform to be tested'
+    required: false
+  ARDUINO_BOARD_OPTIONS_FILE:
+    description: 'Arduino board options file providing option for the boards'
+    required: false
+  ARDUINO_BOARD_MANAGER_URL:
+    description: 'Board manager URL of the platform'
+    required: false # Typically required if the platform is not pre-installed
+  ARDUINO_BOARD_MANAGER_REF_URL:
+    description: 'Additional reference URLs of the platform'
+    required: false # Typically required if there are referred platforms
+  ARDUINO_NO_INSTALLED_REFERENCES:
+    description: 'Indicates not to refer to any locally installed platform'
+    required: false
+    default: false
+
+runs:
+  using: 'node12'
+  main: 'index.js'
