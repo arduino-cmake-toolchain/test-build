@@ -14,9 +14,9 @@ jobs:
     - name: Build the example project of the toolchain
       uses: arduino-cmake-toolchain/test-build@v0.1
       with:
-        CMAKE_GENERATOR: Unix Makefiles
+        CMAKE_GENERATOR: 'Unix Makefiles'
         ARDUINO_TOOLCHAIN_DIR: $GITHUB_WORKSPACE/Arduino-CMake-Toolchain
         ARDUINO_PROJECT_DIR : $GITHUB_WORKSPACE/Arduino-CMake-Toolchain/Examples
         ARDUINO_BUILD_DIR : $GITHUB_WORKSPACE/build
         ARDUINO_BOARD: esp8266.esp8266.generic
-        ARDUINO_BOARD_MANAGER_URL : https://arduino.esp8266.com/stable/package_esp8266com_index.json
+        ARDUINO_BOARD_MANAGER_URL : 'https://arduino.esp8266.com/stable/package_esp8266com_index.json'
