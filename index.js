@@ -42,7 +42,14 @@ try
 		], options);
 	}
 
-	do_build();
+	try
+	{
+		do_build();
+	}
+	catch
+	{
+		exit(1);
+	}
 }
 catch(error)
 {
