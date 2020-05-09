@@ -17,14 +17,14 @@ try
 	{
 		const options = {};
 		options.cwd = build_root_dir;
-		/*options.listeners = {
+		options.listeners = {
 		  stdout: (data) => {
 			process.stdout.write(data.toString(), );
 		  },
 		  stderr: (data) => {
 			process.stdout.write(data.toString());
 		  }
-		};*/
+		};
 		await exec.exec('cmake', [
 			'-G', `${cmake_generator}`,
 			'-D', `CMAKE_TOOLCHAIN_FILE=${toolchain_dir}/Arduino-toolchain.cmake`,
