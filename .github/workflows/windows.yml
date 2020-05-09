@@ -1,0 +1,26 @@
+on: [push]
+
+jobs:
+  test_build:
+    runs-on: windows-latest
+    name: Build a project using Arduino CMake Toolchain
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v2
+    - name: Checkout the Arduino CMake Toolchain repository
+      uses: actions/checkout@v2
+      with:
+        repository: a9183756-gh/Arduino-CMake-Toolchain
+        path: Arduino-CMake-Toolchain
+        ref : release-1.1-dev
+    - run: mkdir  ${{ github.workspace }}/build
+    - name: Build the example project of the toolchain
+      # uses: arduino-cmake-toolchain/test-build@v0.2
+      uses: ./
+      with:
+        CMAKE_GENERATOR: 'MinGW Makefiles'
+        ARDUINO_TOOLCHAIN_DIR:  ${{ github.workspace }}/Arduino-CMake-Toolchain
+        ARDUINO_PROJECT_DIR :  ${{ github.workspace }}/Arduino-CMake-Toolchain/Examples/01_hello_world
+        ARDUINO_BUILD_DIR :  ${{ github.workspace }}/build
+        ARDUINO_BOARD: esp8266.esp8266.generic
+        ARDUINO_BOARD_MANAGER_URL : 'https://arduino.esp8266.com/stable/package_esp8266com_index.json'
