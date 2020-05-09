@@ -22,5 +22,5 @@ jobs:
         ARDUINO_TOOLCHAIN_DIR:  ${{ github.workspace }}/Arduino-CMake-Toolchain
         ARDUINO_PROJECT_DIR :  ${{ github.workspace }}/Arduino-CMake-Toolchain/Examples
         ARDUINO_BUILD_DIR :  ${{ github.workspace }}/build
-        ARDUINO_BOARD: esp8266.esp8266.generic
-        ARDUINO_BOARD_MANAGER_URL : 'https://arduino.esp8266.com/stable/package_esp8266com_index.json'
+        ARDUINO_BOARD: arduino.avr.uno
+        ARDUINO_BOARD_MANAGER_URL : 'https://downloads.arduino.cc/packages/package_index.json'
