@@ -3,7 +3,7 @@ on: [push]
 jobs:
   test_build:
     runs-on: windows-latest
-    name: Build a project using Arduino CMake Toolchain
+    name: Windows build
     steps:
     - name: Checkout the repository
       uses: actions/checkout@v2
