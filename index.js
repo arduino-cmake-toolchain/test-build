@@ -34,22 +34,15 @@ try
 			'-D', `ARDUINO_BOARD_OPTIONS_FILE=${board_options_file}`,
 			'-D', `ARDUINO_NO_INSTALLED_REFERENCES=${no_installed_ref}`,
 			`${source_dir}`
-		], options);
+		], options).catch((err) => process.exit(1));
 
 		options.cwd = build_root_dir;
 		await exec.exec('cmake', [
 			'--build', '.'
-		], options);
+		], options).catch((err) => process.exit(1));
 	}
 
-	try
-	{
-		do_build();
-	}
-	catch
-	{
-		exit(1);
-	}
+	do_build();
 }
 catch(error)
 {
