@@ -1,4 +1,3 @@
-name: Linux Test
 on:
   workflow_dispatch:
     inputs:
@@ -6,6 +5,8 @@ on:
         description: 'Environment'
         required: true
         default: 'development'
+        
+name: "Linux Test ${{ github.event.inputs.project }}"
 
 jobs:
   test_build:
