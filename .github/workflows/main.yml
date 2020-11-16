@@ -1,4 +1,11 @@
-on: [push]
+name: Toolchain Test ${{ github.event.inputs.project }}
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: 'Environment'
+        required: true
+        default: 'development'
 
 jobs:
   test_build:
@@ -12,7 +19,7 @@ jobs:
       with:
         repository: a9183756-gh/Arduino-CMake-Toolchain
         path: Arduino-CMake-Toolchain
-        ref : fix/pkg_mgmt_filter
+        ref : release-1.1-dev
     - run: mkdir  ${{ github.workspace }}/build
     - name: Build the example project of the toolchain
       # uses: arduino-cmake-toolchain/test-build@v0.2
