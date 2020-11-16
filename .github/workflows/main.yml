@@ -1,5 +1,11 @@
-name: Toolchain Test ${{ github.ref }}
-on: [push]
+name: Toolchain Test ${{ github.event.inputs.project }}
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: 'Environment'
+        required: true
+        default: 'development'
 
 jobs:
   test_build:
