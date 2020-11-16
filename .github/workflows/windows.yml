@@ -1,4 +1,4 @@
-name: Windows Test ${{ github.event.inputs.project }}
+name: Windows Test
 on:
   workflow_dispatch:
     inputs:
@@ -12,6 +12,7 @@ jobs:
     runs-on: windows-latest
     name: Windows build
     steps:
+    - run: echo "${{ github.event.inputs.project }}"
     - name: Checkout the repository
       uses: actions/checkout@v2
     - name: Checkout the Arduino CMake Toolchain repository

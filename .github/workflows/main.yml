@@ -1,4 +1,4 @@
-name: Toolchain Test ${{ github.event.inputs.project }}
+name: Linux Test
 on:
   workflow_dispatch:
     inputs:
@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build a project using Arduino CMake Toolchain
     steps:
+    - run: echo "${{ github.event.inputs.project }}"
     - name: Checkout the repository
       uses: actions/checkout@v2
     - name: Checkout the Arduino CMake Toolchain repository
